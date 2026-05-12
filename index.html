@@ -6,6 +6,7 @@
     <title>FinnsMedia | iOS App Developer</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -26,121 +27,159 @@
                 );
         }
 
+        /* ===== HEADER WITH IMAGE ===== */
+
         .header {
-            background-color: rgba(17,17,17,0.9);
+            background:
+                linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+                url("FinnsMedia.png");
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 40px 20px;
+            padding: 120px 20px;
             text-align: center;
         }
 
         .header h1 {
             margin: 0;
-            font-size: clamp(32px, 6vw, 48px);
+            font-size: clamp(42px, 7vw, 68px);
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
         }
 
         .header p {
-            margin-top: 10px;
-            font-size: clamp(15px, 3vw, 18px);
+            margin-top: 14px;
+            font-size: clamp(16px, 3vw, 22px);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
         }
+
+        /* ===== INTRO ===== */
 
         .intro {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px 35px;
+        }
+
+        .intro h2 {
+            font-size: 34px;
+            margin-bottom: 18px;
         }
 
         .intro p {
-            max-width: 650px;
+            max-width: 700px;
             margin: auto;
-            font-size: 16px;
-            line-height: 1.6;
+            font-size: 17px;
+            line-height: 1.7;
         }
 
+        /* ===== APPS SECTION ===== */
+
         .apps-section {
-            padding: 30px 20px;
-            max-width: 950px;
+            padding: 30px 20px 50px;
+            max-width: 1000px;
             margin: auto;
         }
 
         .apps-section h2 {
             text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
         }
 
         .app-card {
-            background: rgba(255,255,255,0.92);
-            padding: 25px;
-            margin-top: 25px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            background: rgba(255,255,255,0.94);
+            padding: 30px;
+            margin-top: 28px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.14);
+            backdrop-filter: blur(6px);
         }
 
         .app-card h3 {
             margin-top: 0;
-            font-size: 24px;
+            font-size: 28px;
+            color: #111;
         }
 
         .app-card p {
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 16px;
         }
 
         ul {
             text-align: left;
-            max-width: 650px;
-            margin: 20px auto;
-            padding-left: 24px;
-            line-height: 1.7;
+            max-width: 700px;
+            margin: 22px auto;
+            padding-left: 26px;
+            line-height: 1.9;
+            font-size: 16px;
         }
 
+        /* ===== BUTTONS ===== */
+
         .button-row {
-            margin-top: 20px;
+            margin-top: 22px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
+            gap: 14px;
         }
 
         .button-row a {
             display: inline-block;
-            min-width: 160px;
-            padding: 12px 18px;
+            min-width: 170px;
+            padding: 13px 18px;
             background: #111;
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
             text-align: center;
             font-size: 15px;
+            font-weight: bold;
+            transition: all 0.25s ease;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.18);
         }
 
         .button-row a:hover {
-            background: #333;
+            background: #ff7b00;
+            transform: translateY(-2px);
         }
+
+        /* ===== FOOTER ===== */
 
         .footer {
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             font-size: 14px;
-            color: #333;
+            color: #222;
         }
 
+        /* ===== MOBILE ===== */
+
         @media screen and (max-width: 600px) {
+
             .header {
-                padding: 32px 16px;
+                padding: 80px 16px;
             }
 
             .intro {
-                padding: 30px 16px;
+                padding: 35px 16px 25px;
+            }
+
+            .intro h2 {
+                font-size: 28px;
             }
 
             .apps-section {
-                padding: 20px 14px;
+                padding: 20px 14px 40px;
             }
 
             .app-card {
-                padding: 20px;
-                border-radius: 10px;
+                padding: 22px;
+                border-radius: 12px;
             }
 
             .app-card h3 {
-                font-size: 21px;
+                font-size: 24px;
             }
 
             .button-row {
@@ -157,41 +196,64 @@
                 padding-left: 20px;
             }
         }
+
     </style>
 </head>
 
 <body>
 
+    <!-- HEADER -->
+
     <div class="header">
         <h1>FinnsMedia</h1>
-        <p>iOS App Developer • Building Clean, Useful Apps</p>
+        <p>Professional iOS App Development • Custom Apps • Modern Design</p>
     </div>
+
+    <!-- INTRO -->
 
     <div class="intro">
         <h2>Welcome 👋</h2>
+
         <p>
-            FinnsMedia creates modern iOS applications focused on simplicity, usability, and real-world value.
+            FinnsMedia develops modern iOS applications focused on clean design,
+            usability, and real-world value. From social experiences to professional
+            productivity tools, our apps are designed to be simple, elegant, and effective.
         </p>
     </div>
+
+    <!-- APPS SECTION -->
 
     <div class="apps-section">
 
         <h2>Our Apps</h2>
 
+        <!-- PERFECT WEDDING -->
+
         <div class="app-card">
+
             <h3>💍 Perfect Wedding Day</h3>
-            <p><strong>Your all-in-one wedding companion for a seamless, unforgettable celebration</strong></p>
+
+            <p>
+                <strong>
+                    Your all-in-one wedding companion for a seamless,
+                    unforgettable celebration
+                </strong>
+            </p>
 
             <ul>
-                <li>📅 Agenda, venues, and event planning tools</li>
+                <li>📅 Agenda, hotel, and event planning tools</li>
                 <li>📸 Shared photo gallery for guests</li>
-                <li>💬 Live chat and guest interaction</li>
-                <li>🚐 Transportation and travel coordination</li>
+                <li>💬 Live guest chat and social interaction</li>
+                <li>🚐 Shuttle and travel coordination</li>
                 <li>🔔 Real-time notifications and updates</li>
                 <li>🎨 Fully customizable themes and layouts</li>
             </ul>
 
-            <p><strong>Guests join for free using a simple event code.</strong></p>
+            <p>
+                Guests join for free using a simple event code and can instantly
+                participate in the wedding experience.
+            </p>
+
         </div>
 
         <div class="button-row">
@@ -201,27 +263,38 @@
             <a href="Perfect-Wedding-Terms.html">Terms of Use</a>
         </div>
 
+        <!-- PHOTO SHEET -->
+
         <div class="app-card">
+
             <h3>📄 Photo Sheet Pro</h3>
-            <p><strong>Organize, annotate, and share photos in clean, professional layouts</strong></p>
 
             <p>
-                Photo Sheet Pro allows users to quickly turn images into structured, printable photo sheets
-                for reports, documentation, or sharing.
+                <strong>
+                    Organize, annotate, and share photos in clean,
+                    professional layouts
+                </strong>
+            </p>
+
+            <p>
+                Photo Sheet Pro helps users quickly transform photos into
+                organized, printable sheets for reports, inspections,
+                field work, documentation, and sharing.
             </p>
 
             <ul>
-                <li>🖼️ Select multiple photos and auto-arrange into pages</li>
-                <li>📐 Layout options: 1, 2, or 4 images per page</li>
-                <li>✏️ Add captions to each image with bulk caption support</li>
-                <li>🛠️ Built-in markup tools with arrows, highlights, and shapes</li>
+                <li>🖼️ Multiple layout options for photo organization</li>
+                <li>📐 1, 2, or 4 images per page</li>
+                <li>✏️ Caption support with bulk captioning</li>
+                <li>🛠️ Built-in markup tools and annotations</li>
                 <li>📄 Export to PDF, print, or email instantly</li>
-                <li>📊 Optional metadata addendum for detailed reporting</li>
+                <li>📊 Optional metadata addendum pages</li>
             </ul>
 
             <p>
-                Designed for simplicity, speed, and professional output.
+                Designed for speed, simplicity, and professional output.
             </p>
+
         </div>
 
         <div class="button-row">
@@ -232,6 +305,8 @@
         </div>
 
     </div>
+
+    <!-- FOOTER -->
 
     <div class="footer">
         © 2026 FinnsMedia • Built with passion for iOS
