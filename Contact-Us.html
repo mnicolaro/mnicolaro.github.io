@@ -6,11 +6,13 @@
 
 <body style="font-family: Arial, sans-serif; margin: 0; background:#f5f5f5; color:#333;">
 
+    <!-- Header -->
     <div style="background:#111; color:white; padding:30px 20px; text-align:center;">
         <h1>FinnsMedia</h1>
         <p>iOS App Developer</p>
     </div>
 
+    <!-- Main Content -->
     <div style="max-width:800px; margin:40px auto; background:white; padding:30px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
 
         <h2>Contact Us</h2>
@@ -19,31 +21,40 @@
             Have a question about one of our apps? Send us a message below.
         </p>
 
-        <form action="mailto:Finnsmedia@nicolaro.com" method="post" enctype="text/plain">
+        <form id="contactForm">
 
-            <label for="name"><strong>Your Name</strong></label><br>
-            <input type="text" id="name" name="Name" required
-                   style="width:100%; padding:12px; margin:8px 0 20px 0; border:1px solid #ccc; border-radius:6px; font-size:16px;">
+            <!-- Name -->
+            <label><strong>Your Name</strong></label><br>
+            <input type="text" id="name" required
+                style="width:100%; padding:12px; margin:8px 0 20px 0; border:1px solid #ccc; border-radius:6px; font-size:16px;">
 
-            <label for="email"><strong>Your Email</strong></label><br>
-            <input type="email" id="email" name="Email" required
-                   style="width:100%; padding:12px; margin:8px 0 20px 0; border:1px solid #ccc; border-radius:6px; font-size:16px;">
+            <!-- Email -->
+            <label><strong>Your Email</strong></label><br>
+            <input type="email" id="email" required
+                style="width:100%; padding:12px; margin:8px 0 20px 0; border:1px solid #ccc; border-radius:6px; font-size:16px;">
 
-            <label for="application"><strong>Application</strong></label><br>
-            <select id="application" name="Application" required
-                    style="width:100%; padding:12px; margin:8px 0 20px 0; border:1px solid #ccc; border-radius:6px; font-size:16px;">
+            <!-- App Dropdown -->
+            <label><strong>Application</strong></label><br>
+            <select id="application" required
+                style="width:100%; padding:12px; margin:8px 0 20px 0; border:1px solid #ccc; border-radius:6px; font-size:16px;">
+
                 <option value="">Please select an application</option>
                 <option value="Perfect Wedding Day">Perfect Wedding Day</option>
                 <option value="Photo Sheet Pro">Photo Sheet Pro</option>
+
             </select>
 
-            <label for="message"><strong>Message</strong></label><br>
-            <textarea id="message" name="Message" rows="8" required
-                      style="width:100%; padding:12px; margin:8px 0 25px 0; border:1px solid #ccc; border-radius:6px; font-size:16px;"></textarea>
+            <!-- Message -->
+            <label><strong>Message</strong></label><br>
+            <textarea id="message" rows="8" required
+                style="width:100%; padding:12px; margin:8px 0 25px 0; border:1px solid #ccc; border-radius:6px; font-size:16px;"></textarea>
 
-            <button type="submit"
-                    style="background:#111; color:white; padding:14px 28px; border:none; border-radius:6px; font-size:16px; cursor:pointer;">
+            <!-- Send Button -->
+            <button type="button" onclick="sendEmail()"
+                style="background:#111; color:white; padding:14px 28px; border:none; border-radius:6px; font-size:16px; cursor:pointer;">
+
                 Send Message
+
             </button>
 
         </form>
@@ -53,6 +64,34 @@
         </p>
 
     </div>
+
+    <!-- JavaScript -->
+    <script>
+
+        function sendEmail() {
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var application = document.getElementById("application").value;
+            var message = document.getElementById("message").value;
+
+            var subject = encodeURIComponent("FinnsMedia Contact Form - " + application);
+
+            var body = encodeURIComponent(
+                "Name: " + name + "\n\n" +
+                "Email: " + email + "\n\n" +
+                "Application: " + application + "\n\n" +
+                "Message:\n" + message
+            );
+
+            window.location.href =
+                "mailto:Finnsmedia@nicolaro.com?subject=" +
+                subject +
+                "&body=" +
+                body;
+        }
+
+    </script>
 
 </body>
 </html>
