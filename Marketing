@@ -1,1 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Sheet Pro</title>
 
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            background: #0b1d3a;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 42px;
+        }
+
+        .header p {
+            margin-top: 10px;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .hero-image {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .button-row {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: #0056d6;
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: #003f9e;
+        }
+
+        .section {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .section h2 {
+            color: #0b1d3a;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            max-width: 850px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0b1d3a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        .footer a {
+            color: #7db7ff;
+            text-decoration: none;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .section h2 {
+                font-size: 28px;
+            }
+
+            .section p {
+                font-size: 16px;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 320px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Photo Sheet Pro</h1>
+        <p>Professional Photo Documentation Made Simple</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Marketing Image -->
+        <img src="Marketing.png" alt="Photo Sheet Pro Marketing" class="hero-image">
+
+        <!-- Buttons -->
+        <div class="button-row">
+
+            <a href="https://apps.apple.com" target="_blank" class="btn">
+                Download on the App Store
+            </a>
+
+            <a href="photosheet-support.html" class="btn">
+                Support
+            </a>
+
+            <a href="photosheet-privacy.html" class="btn">
+                Privacy Policy
+            </a>
+
+            <a href="photosheet-hold-harmless.html" class="btn">
+                Hold Harmless
+            </a>
+
+        </div>
+
+        <!-- About Section -->
+        <div class="section">
+            <h2>Built for Field Professionals</h2>
+
+            <p>
+                Photo Sheet Pro helps field adjusters, inspectors, engineers,
+                contractors, and claims professionals create clean,
+                professional photo documentation directly from their iPhone or iPad.
+                Add captions, markup damage areas, organize images, and export
+                polished PDF photo sheets in minutes.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+
+        <h3>FinnsMedia</h3>
+
+        <p>
+            iOS App Developer
+        </p>
+
+        <p>
+            Contact:
+            <a href="mailto:finnsmedia@nicolaro.com">
+                finnsmedia@nicolaro.com
+            </a>
+        </p>
+
+    </div>
+
+</body>
+</html>
