@@ -1,157 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinnsMedia | iOS App Developer</title>
-    <style>
-        * { box-sizing: border-box; }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            color: #333;
-            background: linear-gradient(to bottom, #7ec8f5 0%, #b9e6ff 32%, #ffffff 47%, #4fb3d8 55%, #1f89b6 68%, #d9bd82 100%);
-        }
-        /* Header image displayed in full, without cropping or darkening */
-        .header {
-            background: #11b9c2;
-            text-align: center;
-            line-height: 0;
-        }
-        .header img {
-            display: block;
-            width: 100%;
-            height: auto;
-            margin: 0 auto;
-        }
-        .intro { text-align: center; padding: 50px 20px 35px; }
-        .intro h2 { font-size: 34px; margin-bottom: 18px; }
-        .intro p { max-width: 700px; margin: auto; font-size: 17px; line-height: 1.7; }
-        .apps-section { padding: 30px 20px 50px; max-width: 1000px; margin: auto; }
-        .apps-section h2 { text-align: center; font-size: 36px; margin-bottom: 30px; }
-        .app-card { background: rgba(255,255,255,0.94); padding: 30px; margin-top: 28px; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.14); backdrop-filter: blur(6px); }
-        .app-card h3 { margin-top: 0; font-size: 28px; color: #111; }
-        .app-card p { line-height: 1.7; font-size: 16px; }
-        ul { text-align: left; max-width: 700px; margin: 22px auto; padding-left: 26px; line-height: 1.9; font-size: 16px; }
-        .button-row { margin-top: 22px; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
-        .button-row a { display: inline-block; min-width: 170px; padding: 13px 18px; background: #111; color: white; text-decoration: none; border-radius: 10px; text-align: center; font-size: 15px; font-weight: bold; transition: all 0.25s ease; box-shadow: 0 3px 8px rgba(0,0,0,0.18); }
-        .button-row a:hover { background: #ff7b00; transform: translateY(-2px); }
-        .footer { text-align: center; padding: 40px 20px; font-size: 14px; color: #222; }
-        @media screen and (max-width: 600px) {
-            .intro { padding: 35px 16px 25px; }
-            .intro h2 { font-size: 28px; }
-            .apps-section { padding: 20px 14px 40px; }
-            .app-card { padding: 22px; border-radius: 12px; }
-            .app-card h3 { font-size: 24px; }
-            .button-row { flex-direction: column; gap: 10px; }
-            .button-row a { width: 100%; min-width: 0; }
-            ul { padding-left: 20px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#a9e8f4">
+<title>FinnsMedia | iOS App Developer</title>
+<style>
+:root{--aqua:#10b9c6;--deep:#076d82;--orange:#ff8a23;--cream:#fff7e9;--ink:#18343d;--sky:#b8e9fb}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:linear-gradient(180deg,#a9e8f4 0%,#d8f5fa 32%,#fff5e2 76%,#f4d5a1 100%)}
+.header{line-height:0;background:#a9e8f4}
+.header img{display:block;width:100%;height:auto}
+main{max-width:1100px;margin:auto;padding:0 20px}
+.nav-wrap{padding:24px 0 4px}
+.button-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:14px auto}
+.button-row a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 20px;border:2px solid #14363c;border-radius:13px;background:linear-gradient(180deg,#283f46,#122c34);color:#fff;text-decoration:none;font-weight:700;font-size:14px;box-shadow:0 5px 0 #0b5260,0 8px 15px #17505a2c;transition:transform .15s,background .15s}
+.button-row a:hover,.button-row a:focus-visible{background:linear-gradient(180deg,#ffab42,#e97417);transform:translateY(-2px);outline-offset:3px}
+.button-row.flyers a{background:linear-gradient(180deg,#fffdf4,#f8e5c9);color:#173943;border-color:#178b9b;box-shadow:0 4px 0 #138394,0 7px 12px #17505a20}
+.button-row.flyers a:hover{background:#ffe0ae}
+.intro{text-align:center;padding:34px 14px 26px}
+.intro h1,.apps-section>h2{font-size:clamp(27px,4vw,38px);margin:0 0 16px;color:#164c59}
+.intro p{max-width:750px;margin:auto;font-size:17px;line-height:1.7}
+.apps-section{padding:10px 0 52px}
+.apps-section>h2{text-align:center;margin:10px 0 24px}
+.app-card{position:relative;overflow:hidden;background:linear-gradient(135deg,#fffaf0,#fff5e6);border:2px solid #ffffff;border-radius:22px;box-shadow:0 8px 0 #1d8f9c,0 16px 28px #135d6b25;padding:30px;margin:25px 0 22px}
+.app-card::before{content:"";position:absolute;top:0;left:0;right:0;height:9px;background:linear-gradient(90deg,var(--aqua),#ffe6b1,var(--orange),var(--aqua))}
+.app-heading{display:flex;align-items:center;gap:20px;margin-bottom:16px}
+.app-icon{width:94px;height:94px;flex:none;border-radius:22px;overflow:hidden;background:linear-gradient(145deg,#20c5d0,#086b8c);border:4px solid white;box-shadow:0 4px 12px #124e5d3d;display:grid;place-items:center;position:relative}
+.app-icon img{display:block;width:100%;height:100%;object-fit:cover;position:relative;z-index:2}
+.app-icon .fallback{position:absolute;inset:0;display:grid;place-items:center;font-size:43px}
+.app-icon.wedding{background:linear-gradient(135deg,#f9c9d9,#b7659c)}
+.app-icon.estimate{background:linear-gradient(135deg,#fea94d,#a44b27)}
+.app-card h3{font-size:clamp(24px,3vw,30px);color:#173c45;margin:0 0 6px}
+.app-tag{color:#a84c17;font-weight:700;margin:0}
+.app-card p{line-height:1.7;font-size:16px}
+.app-card ul{padding-left:24px;line-height:1.85;margin:18px 0;font-size:16px}
+.app-actions{margin:0 0 32px}
+.footer{text-align:center;padding:28px 20px 38px;background:#0d6476;color:#fff;border-top:7px solid #f9a94d}
+@media(max-width:600px){main{padding:0 14px}.nav-wrap{padding-top:16px}.button-row{gap:10px}.button-row a{flex:1 1 100%;width:100%}.intro{padding:27px 8px 20px}.app-card{padding:24px 19px}.app-heading{gap:14px}.app-icon{width:72px;height:72px;border-radius:17px}.app-icon .fallback{font-size:34px}.app-card ul{padding-left:20px}}
+@media(prefers-reduced-motion:reduce){.button-row a{transition:none}}
+</style>
 </head>
 <body>
-    <!-- HEADER -->
-    <div class="header">
-        <img src="Finns%20Media%20Coastal%20App%20Studio.png" alt="Finns Media coastal claymation banner — iOS App Development" width="2048" height="682">
-    </div>
-    <!-- TOP NAVIGATION -->
-    <div class="button-row" style="padding: 25px 20px 0;">
-        <a href="Marketing.html">Marketing</a>
-        <a href="WeddingPromo.html">Wedding Promo Video</a>
-        <a href="Contact-Us.html">Contact Us</a>
-    </div>
-    <!-- APP FLYERS -->
-    <div class="button-row" style="padding: 15px 20px 0;">
-        <a href="WeddingFlyer.png" target="_blank">💍 Perfect Wedding</a>
-        <a href="PhotosheetFlyer.png" target="_blank">📄 Photo Sheet</a>
-        <a href="PocketEstimateFlyer.png" target="_blank">🏠 Pocket Estimate</a>
-    </div>
-    <!-- INTRO -->
-    <div class="intro">
-        <h2>Welcome 👋</h2>
-        <p>FinnsMedia develops modern iOS applications focused on clean design,
-        usability, and real-world value. From social experiences to professional
-        productivity tools, our apps are designed to be simple, elegant, and effective.</p>
-    </div>
-    <!-- APPS SECTION -->
-    <div class="apps-section">
-        <h2>Our Apps</h2>
-        <!-- PERFECT WEDDING -->
-        <div class="app-card">
-            <h3>💍 Perfect Wedding Day</h3>
-            <p><strong>Your all-in-one wedding companion for a seamless,
-            unforgettable celebration</strong></p>
-            <ul>
-                <li>📅 Agenda, hotel, and event planning tools</li>
-                <li>📸 Shared photo gallery for guests</li>
-                <li>💬 Live guest chat and social interaction</li>
-                <li>🚐 Shuttle and travel coordination</li>
-                <li>🔔 Real-time notifications and updates</li>
-                <li>🎨 Fully customizable themes and layouts</li>
-            </ul>
-            <p>Guests join for free using a simple event code and can instantly
-            participate in the wedding experience.</p>
-        </div>
-        <div class="button-row">
-            <a href="perfect-wedding-support.html">Support</a>
-            <a href="perfect-wedding-privacy.html">Privacy Policy</a>
-            <a href="perfect-wedding-agreement.html">Agreement</a>
-            <a href="Perfect-Wedding-Terms.html">Terms of Use</a>
-        </div>
-        <!-- PHOTO SHEET -->
-        <div class="app-card">
-            <h3>📄 Photo Sheet Pro</h3>
-            <p><strong>Organize, annotate, and share photos in clean,
-            professional layouts</strong></p>
-            <p>Photo Sheet Pro helps users quickly transform photos into
-            organized, printable sheets for reports, inspections,
-            field work, documentation, and sharing.</p>
-            <ul>
-                <li>🖼️ Multiple layout options for photo organization</li>
-                <li>📐 1, 2, or 4 images per page</li>
-                <li>✏️ Caption support with bulk captioning</li>
-                <li>🛠️ Built-in markup tools and annotations</li>
-                <li>📄 Export to PDF, print, or email instantly</li>
-                <li>📊 Optional metadata addendum pages</li>
-            </ul>
-            <p>Designed for speed, simplicity, and professional output.</p>
-        </div>
-        <div class="button-row">
-            <a href="photosheet-support.html">Support</a>
-            <a href="photosheet-privacy.html">Privacy Policy</a>
-            <a href="photosheet-agreement.html">Agreement</a>
-            <a href="photosheet-terms.html">Terms of Use</a>
-        </div>
-        <!-- POCKET ESTIMATE -->
-        <div class="app-card">
-            <h3>🏠 Pocket Estimate</h3>
-            <p><strong>AI-powered property damage assessment — scan, document,
-            and estimate in minutes, not hours</strong></p>
-            <p>Pocket Estimate combines Apple LiDAR room scanning, photo
-            documentation, voice dictation, and AI analysis to produce
-            professional-grade damage exposure ranges and itemized estimates.
-            Built by a 35+ year insurance industry professional.</p>
-            <ul>
-                <li>📡 LiDAR room scanning for precise spatial data</li>
-                <li>📸 Up to 10 annotated photos per room</li>
-                <li>🎙️ Voice dictation for hands-free scope entry</li>
-                <li>🤖 AI reviews images, scans, and notes together</li>
-                <li>📊 Low-to-high damage exposure range</li>
-                <li>🧾 Itemized estimates by room and phase</li>
-                <li>📄 Export to PDF or XLS and share instantly</li>
-                <li>🏢 Supports dwelling, condo, and commercial properties</li>
-            </ul>
-            <p>Designed for insurance adjusters, contractors, and property owners.
-            Calibrated to real field costs — not generic databases.</p>
-        </div>
-        <div class="button-row">
-            <a href="pocket-estimate-support.html">Support</a>
-            <a href="pocket-estimate-privacy.html">Privacy Policy</a>
-            <a href="pocket-estimate-agreement.html">Agreement</a>
-            <a href="pocket-estimate-terms.html">Terms of Use</a>
-        </div>
-    </div>
-    <!-- FOOTER -->
-    <div class="footer">© 2026 FinnsMedia • Built with passion for iOS</div>
+<header class="header"><img src="FinnsMedia-Wave-Banner.png" alt="FinnsMedia coastal claymation banner — iOS App Development, Building Clean, Useful Apps" width="2048" height="682"></header>
+<main>
+<nav class="nav-wrap" aria-label="Main navigation">
+<div class="button-row"><a href="Marketing.html">Marketing</a><a href="WeddingPromo.html">Wedding Promo Video</a><a href="Contact-Us.html">Contact Us</a></div>
+<div class="button-row flyers"><a href="WeddingFlyer.png" target="_blank" rel="noopener">💍 Perfect Wedding</a><a href="PhotosheetFlyer.png" target="_blank" rel="noopener">🎞️ StorySheet</a><a href="PocketEstimateFlyer.png" target="_blank" rel="noopener">🏠 Pocket Estimate</a></div>
+</nav>
+<section class="intro"><h1>Welcome 👋</h1><p>FinnsMedia develops modern iOS applications focused on clean design, usability, and real-world value. From memorable moments to professional productivity tools, our apps are designed to be simple, elegant, and effective.</p></section>
+<section class="apps-section" aria-labelledby="apps-title"><h2 id="apps-title">Our Apps</h2>
+<article class="app-card">
+<div class="app-heading"><div class="app-icon"><span class="fallback" aria-hidden="true">🎞️</span><img src="StorySheet-icon.png" alt="" onerror="this.style.display='none'"></div><div><h3>StorySheet</h3><p class="app-tag">Turn your moments into your story.</p></div></div>
+<p><strong>Turn photos and short videos into beautiful, shareable stories.</strong></p>
+<p>StorySheet brings your favorite moments together in customizable layouts, with captions, markups, and creative backgrounds. Whether you're sharing a celebration, documenting a project, or preserving memories, StorySheet makes it easy to tell the whole story.</p>
+<ul><li>📸 Combine photos and short video clips</li><li>📝 Add captions using typing or dictation</li><li>🎨 Choose from layouts and creative backgrounds</li><li>✏️ Add arrows, highlights, and annotations</li><li>📄 Create organized photo sheets and export to PDF</li><li>✨ Share your stories with friends, family, or colleagues</li></ul>
+</article>
+<div class="button-row app-actions"><a href="photosheet-support.html">Support</a><a href="photosheet-privacy.html">Privacy Policy</a><a href="photosheet-agreement.html">Agreement</a><a href="photosheet-terms.html">Terms of Use</a></div>
+<article class="app-card">
+<div class="app-heading"><div class="app-icon wedding"><span class="fallback" aria-hidden="true">💍</span><img src="PerfectWeddingDay-icon.png" alt="" onerror="this.style.display='none'"></div><div><h3>Perfect Wedding Day</h3><p class="app-tag">Celebrate together, beautifully.</p></div></div>
+<p><strong>Your all-in-one wedding companion for a seamless, unforgettable celebration.</strong></p>
+<ul><li>📅 Agenda, hotel, and event planning tools</li><li>📸 Shared photo gallery for guests</li><li>💬 Live guest chat and social interaction</li><li>🚐 Shuttle and travel coordination</li><li>🔔 Real-time notifications and updates</li><li>🎨 Fully customizable themes and layouts</li></ul>
+<p>Guests join for free using a simple event code and can instantly participate in the wedding experience.</p>
+</article>
+<div class="button-row app-actions"><a href="perfect-wedding-support.html">Support</a><a href="perfect-wedding-privacy.html">Privacy Policy</a><a href="perfect-wedding-agreement.html">Agreement</a><a href="Perfect-Wedding-Terms.html">Terms of Use</a></div>
+<article class="app-card">
+<div class="app-heading"><div class="app-icon estimate"><span class="fallback" aria-hidden="true">🏠</span><img src="PocketEstimate-icon.png" alt="" onerror="this.style.display='none'"></div><div><h3>Pocket Estimate</h3><p class="app-tag">Smarter estimates in the field.</p></div></div>
+<p><strong>AI-powered property damage assessment — scan, document, and estimate in minutes, not hours.</strong></p>
+<p>Pocket Estimate combines Apple LiDAR room scanning, photo documentation, voice dictation, and AI analysis to produce professional-grade damage exposure ranges and itemized estimates. Built by a 35+ year insurance industry professional.</p>
+<ul><li>📡 LiDAR room scanning for precise spatial data</li><li>📸 Up to 10 annotated photos per room</li><li>🎙️ Voice dictation for hands-free scope entry</li><li>🤖 AI reviews images, scans, and notes together</li><li>📊 Low-to-high damage exposure range</li><li>🧾 Itemized estimates by room and phase</li><li>📄 Export to PDF or XLS and share instantly</li><li>🏢 Supports dwelling, condo, and commercial properties</li></ul>
+<p>Designed for insurance adjusters, contractors, and property owners. Calibrated to real field costs — not generic databases.</p>
+</article>
+<div class="button-row app-actions"><a href="pocket-estimate-support.html">Support</a><a href="pocket-estimate-privacy.html">Privacy Policy</a><a href="pocket-estimate-agreement.html">Agreement</a><a href="pocket-estimate-terms.html">Terms of Use</a></div>
+</section>
+</main>
+<footer class="footer">© 2026 FinnsMedia • Built with passion for iOS</footer>
 </body>
 </html>
